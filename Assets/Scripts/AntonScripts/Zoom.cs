@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zoom : MonoBehaviour
 {
     private Camera magnifyCamera;
-    private float MGWidth = Screen.width / 5f, MGHeight = Screen.width / 5f;
+    private float MGWidth = Screen.width / 5f, MGHeight = Screen.width / 5f; // Magnify glass width and height
     private Vector3 mousePos;
 
     void Start()
@@ -22,6 +22,7 @@ public class Zoom : MonoBehaviour
 
         if (magnifyCamera != null && magnifyCamera.enabled)
         {
+            //Set the camera's pixelRect and camera position at mouse position
             magnifyCamera.pixelRect = new Rect(Input.mousePosition.x - MGWidth / 2.0f, Input.mousePosition.y - MGHeight / 2.0f, MGWidth, MGHeight);
             mousePos = getWorldPosition(Input.mousePosition);
             magnifyCamera.transform.position = mousePos;
@@ -29,14 +30,14 @@ public class Zoom : MonoBehaviour
         }
     }
 
+    //Method creates the magnifying glass
     private void createMagnifyGlass()
     {
         GameObject cameraObject = new GameObject("MagnifyCamera");
         magnifyCamera = cameraObject.AddComponent<Camera>();
         magnifyCamera.enabled = false;
 
-        // Set other camera properties as before
-        // ...
+       
 
         if (Camera.main.orthographic)
         {
@@ -58,6 +59,8 @@ public class Zoom : MonoBehaviour
         }
     }
 
+
+    //Method calculates world's point from screen point as per camera's projection type
     public Vector3 getWorldPosition(Vector3 screenPos)
     {
         Vector3 worldPos;
