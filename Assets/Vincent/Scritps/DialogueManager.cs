@@ -11,15 +11,9 @@ public class DialogueManager : MonoBehaviour
 
     private int index;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        textComponent.text = string.Empty;
-        StartDialogue();
-    }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -34,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void NextLine()
+    public void NextLine()
     {
         if (index < lines.Length - 1)
         {
@@ -50,13 +44,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
+        
         index = 0;
         StartCoroutine(TypeLine());
+        gameObject.SetActive(true);
     }
 
-    IEnumerator TypeLine()
+    public IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
         {
