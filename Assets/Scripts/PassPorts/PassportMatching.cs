@@ -5,44 +5,35 @@ using UnityEngine;
 public class PassportMatching : MonoBehaviour
 {
 
-    public List<GameObject> allowedObjects;
-    public GameObject objectToCheck;
-    
 
 
+    public bool choice;
+
+    public GameObject gameobject1;
+    public GameObject gameobject2;
     // Start is called before the first frame update
     void Start()
     {
-        CheckObject();
 
-        GameObject Testguest = GameObject.FindWithTag("A");
 
-        objectToCheck = Testguest.GetComponent<GameObject>();
+        if (gameobject1.CompareTag(gameobject2.tag))
+        {
+            print("Tags are equal.");
+            choice = true;
+        }
+        else
+        {
+            print("Tags are not equal.");
+
+            choice = false;
+        }
+
     }
 
     private void Update()
     {
-        if (gameObject.CompareTag("A"))
-        {
-            print("matching");
-        }
-        else
-        {
-            print("not matching");
-        }
 
-        
     }
 
-    void CheckObject()
-    {
-        if (objectToCheck != null && allowedObjects.Contains(objectToCheck))
-        {
-            Debug.Log(objectToCheck.name + " is allowed.");
-        }
-        else
-        {
-            Debug.Log(objectToCheck.name + " is not allowed.");
-        }
-    }
+
 }
