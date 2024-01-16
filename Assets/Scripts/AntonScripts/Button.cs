@@ -6,10 +6,13 @@ public class Button : MonoBehaviour
 {
 
     public GameObject objectToSpawn;
+    public bool spawn = true;// its true
 
 
-    private bool spawn = true;// its true
-   
+    
+
+
+
 
 
     public void OnButtonPress()

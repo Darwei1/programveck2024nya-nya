@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 137225314}
   m_Layer: 5
   m_Name: KeyButton
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,6 +379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 8998300035644350874, guid: 995c9b2a23190bd4b9d047661d75e822, type: 3}
+  script: {fileID: 1978183533}
+  Button: {fileID: 137225312}
 --- !u!4 &1189840355
 Transform:
   m_ObjectHideFlags: 0
@@ -974,6 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3963595892595867967, guid: 348c6146fc0f20641a129f3bfdb34802, type: 3}
+  spawn: 1
 --- !u!1 &2018291163
 GameObject:
   m_ObjectHideFlags: 0
