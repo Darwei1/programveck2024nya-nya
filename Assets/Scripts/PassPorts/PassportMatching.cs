@@ -11,12 +11,13 @@ public class PassportMatching : MonoBehaviour
 
     public GameObject gameobject1;
     public GameObject gameobject2;
+    public GameObject gameobject3;
     // Start is called before the first frame update
     void Start()
     {
 
 
-        if (gameobject1.CompareTag(gameobject2.tag))
+        if (gameobject1.CompareTag(gameobject2.tag) && gameobject1.CompareTag(gameobject3.tag))
         {
             print("Tags are equal.");
             choice = true;
