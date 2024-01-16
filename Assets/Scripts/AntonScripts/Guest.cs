@@ -18,9 +18,12 @@ public class Guest : MonoBehaviour
 
         GameObject KeyButton = GameObject.FindWithTag("Button");
 
-        Button button = buttonScript.GetComponent<Button>();
+        Button button = buttonScript.GetComponentInChildren<Button>();
 
+        
         buttonScript.spawn = true;
+
+       
     }
 
     // Update is called once per frame
