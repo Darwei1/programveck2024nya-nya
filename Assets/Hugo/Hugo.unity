@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc3fc81f2504e741b6e83940e553b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterPrefab: {fileID: 2067513262010752473, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
+  CharacterPrefab: {fileID: 2067513262010752473, guid: 97db15741693e1a4bace80d643a0dead, type: 3}
   CharacterOnScreen: 0
 --- !u!4 &808081605
 Transform:
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2565165597534571488, guid: 97db15741693e1a4bace80d643a0dead, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: Play
         m_Mode: 5
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterPrefab:
-  - {fileID: 2067513262010752473, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
+  - {fileID: 2067513262010752473, guid: 97db15741693e1a4bace80d643a0dead, type: 3}
   - {fileID: 9102064720103527038, guid: 85f964e240fd9d34abf7c9b6d1840d89, type: 3}
   - {fileID: 9102064720103527038, guid: 6aa26673d57244949b35406e011e617f, type: 3}
   - {fileID: 2067513262010752473, guid: b807d679ef9d2d04c8f6174efff1e63f, type: 3}
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2565165597534571488, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
+      - m_Target: {fileID: 2565165597534571488, guid: 97db15741693e1a4bace80d643a0dead, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: Play
         m_Mode: 5
@@ -1924,7 +1924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterPrefab:
-  - {fileID: 2067513262010752473, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
+  - {fileID: 2067513262010752473, guid: 97db15741693e1a4bace80d643a0dead, type: 3}
   - {fileID: 9102064720103527038, guid: 85f964e240fd9d34abf7c9b6d1840d89, type: 3}
   - {fileID: 2067513262010752473, guid: b807d679ef9d2d04c8f6174efff1e63f, type: 3}
   - {fileID: 9102064720103527038, guid: 6aa26673d57244949b35406e011e617f, type: 3}
