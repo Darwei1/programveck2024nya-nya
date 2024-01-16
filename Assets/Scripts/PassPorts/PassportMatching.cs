@@ -17,7 +17,7 @@ public class PassportMatching : MonoBehaviour
     {
 
 
-        if (gameobject1.CompareTag(gameobject2.tag) && gameobject1.CompareTag(gameobject3.tag))
+        if (gameobject1.layer == gameobject2.layer || gameobject1.layer == gameobject3.layer)
         {
             print("Tags are equal.");
             choice = true;
