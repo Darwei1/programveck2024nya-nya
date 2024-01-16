@@ -454,7 +454,7 @@ MonoBehaviour:
   - 'alien: helo, give me a room!'
   - 'you: okay sir!'
   - 'alien: i love big weapons!'
-  - 'you: yes king!'
+  - you
   textSpeed: 0.095
   CharacterPrefab: {fileID: 369031141}
   latestCharacter: {fileID: 0}
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   - 'alien: helo, give me a room!'
   - 'you: okay sir!'
   - 'alien: i love big weapons!'
-  - 'you: yes king!'
+  - you
   textSpeed: 0.095
   CharacterPrefab: {fileID: 369031141}
   latestCharacter: {fileID: 0}

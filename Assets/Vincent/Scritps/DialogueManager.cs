@@ -11,6 +11,11 @@ public class DialogueManager : MonoBehaviour
 
     private int index;
 
+    void Start()
+    {
+        textComponent.text = string.Empty;
+        StartDialogue();
+    }
 
     // Update is called once per frame
     public void Update()
