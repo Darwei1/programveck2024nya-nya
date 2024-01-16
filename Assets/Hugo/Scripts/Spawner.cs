@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject CharacterPrefab;
+    public GameObject[] CharacterPrefab;
     public GameObject latestCharacter;
    
     
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
+    }
+
+    void Spak()
+    {
+        int i;
+        i = Random.Range(0, 2);
+      //  int[Random.Range] rand = { 0, 1, 2 };
     }
 
     public void Spawn()
     {
-       latestCharacter = Instantiate(CharacterPrefab, new Vector3(0, 1.71f, 0), Quaternion.identity);
+       latestCharacter = Instantiate(CharacterPrefab[Random.Range(0,CharacterPrefab.Length)], new Vector3(0, 1.71f, 0), Quaternion.identity);
     }
 
     public void spawnTimer()
@@ -32,7 +39,7 @@ public class Spawner : MonoBehaviour
         Invoke("Animation1", 0);
         
         offScreenDestroy(latestCharacter);
-        Invoke("Spawn", 5);
+        Invoke("Spawn", 3);
     }
     public void spawnTimer2()
     {
@@ -40,7 +47,7 @@ public class Spawner : MonoBehaviour
         Invoke("Animation2", 0);
        
         offScreenDestroy(latestCharacter);
-        Invoke("Spawn", 5);
+        Invoke("Spawn", 3);
     }
     public void Animation1()
     {
@@ -54,5 +61,11 @@ public class Spawner : MonoBehaviour
     {
         Destroy(objectToDestroy, 1);
     }
-   
+
+    void firstSpawn()
+    {
+        //Instantiate(CharacterPrefab, new Vector3(0, 1.71f, 0), Quaternion.identity);
+        //print("ballsack");
+
+    }
 }

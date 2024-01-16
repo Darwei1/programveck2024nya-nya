@@ -14,7 +14,7 @@ public class KeySpawn : MonoBehaviour
         if (spawn == true)
         {
             Instantiate(objectToSpawn, new Vector3(3, -3, 0), Quaternion.Euler(0, 0, -90));
-            spawn = false;//stops more from being able to instantiate
+            
         }
 
     }
