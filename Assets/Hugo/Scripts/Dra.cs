@@ -31,7 +31,7 @@ public class Dra : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "guest")
+        if (collision.gameObject.layer == 6)
         {
             Destroy(this.gameObject);
         }

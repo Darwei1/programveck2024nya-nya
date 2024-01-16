@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class firstCharacter : MonoBehaviour
 {
-    public GameObject dialogue;
+    //public GameObject dialogue;
     public GameObject CharacterPrefab;
     public bool CharacterOnScreen = false;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class firstCharacter : MonoBehaviour
     {
         if (CharacterOnScreen == true)
         {
-            dialogue.GetComponent<DialogueManager>().Invoke("StartDialogue", 0);
+            //dialogue.GetComponent<DialogueManager>().Invoke("StartDialogue", 0);
             print("he is among us");
 
         }

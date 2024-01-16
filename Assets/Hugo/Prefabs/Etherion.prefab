@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2565165597534571488}
   - component: {fileID: 4960359592803731070}
   - component: {fileID: 1450697173966671060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Etherion
-  m_TagString: guest
+  m_TagString: A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.399998, y: 21.599998}
+    oldSize: {x: 7.6799994, y: 4.3199997}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

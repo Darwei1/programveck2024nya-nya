@@ -613,14 +613,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 223045443}
   lines:
-  - 'Alien: andgjag'
+  - 'Alien: wasup g'
   - 'You: Helo'
   - 'Alien: get me a room'
   - You:Alr, zip them pants down
   - 'alien: goodbye'
   - "You: glory till jimmie \xE5kersson"
-  textSpeed: 0.1
-  firstSpawn: {fileID: 0}
+  textSpeed: 1
 --- !u!114 &245717522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc3fc81f2504e741b6e83940e553b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
   CharacterPrefab: {fileID: 2067513262010752473, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
   CharacterOnScreen: 0
 --- !u!4 &808081605

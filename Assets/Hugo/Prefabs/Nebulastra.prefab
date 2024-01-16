@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2565165597534571488}
   - component: {fileID: 4960359592803731070}
   - component: {fileID: 1450697173966671060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nebulastra
-  m_TagString: guest
+  m_TagString: A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
