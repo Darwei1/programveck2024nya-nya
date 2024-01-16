@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] CharacterPrefab;
     public GameObject latestCharacter;
-   
+    
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
        latestCharacter = Instantiate(CharacterPrefab[Random.Range(0,CharacterPrefab.Length)], new Vector3(0, 1.71f, 0), Quaternion.identity);
+       
     }
 
     public void spawnTimer()
@@ -62,10 +63,9 @@ public class Spawner : MonoBehaviour
         Destroy(objectToDestroy, 1);
     }
 
-    void firstSpawn()
+    public void Dialogue()
     {
-        //Instantiate(CharacterPrefab, new Vector3(0, 1.71f, 0), Quaternion.identity);
-        //print("ballsack");
-
+        GetComponent<DialogueManager>().StartDialogue();
+        
     }
 }

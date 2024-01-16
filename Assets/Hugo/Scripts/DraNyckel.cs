@@ -31,7 +31,7 @@ public class DraNyckel : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.tag == "guest")
         {
             Destroy(this.gameObject);
         }

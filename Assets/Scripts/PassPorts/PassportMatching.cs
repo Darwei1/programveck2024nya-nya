@@ -8,33 +8,45 @@ public class PassportMatching : MonoBehaviour
 
 
     public bool choice;
+    GameObject playerRef;
+    public GameObject[] passports;
 
-    public GameObject gameobject1;
-    public GameObject gameobject2;
-    public GameObject gameobject3;
     // Start is called before the first frame update
     void Start()
     {
+        playerRef = GameObject.FindWithTag("guest");
 
 
-        if (gameobject1.layer == gameobject2.layer || gameobject1.layer == gameobject3.layer)
-        {
-            print("Tags are equal.");
-            choice = true;
-        }
-        else
-        {
-            print("Tags are not equal.");
-
-            choice = false;
-        }
-
+        //compareLayers();
     }
 
     private void Update()
     {
-
+        for (int i = 0; i < passports.Length; i++)
+        {
+            if (passports[i].layer == playerRef.layer)
+            {
+                print("ARE MATCHING!");
+            }
+            else
+            {
+                print("ARE NOT MATCHING!");
+            }
+        }
     }
 
-
+    void compareLayers()
+    {
+        for (int i = 0; i < passports.Length; i++)
+        {
+            if (passports[i].layer == playerRef.layer)
+            {
+                print("ARE MATCHING!");
+            }
+            else
+            {
+                print("ARE NOT MATCHING!");
+            }
+        }
+    }
 }

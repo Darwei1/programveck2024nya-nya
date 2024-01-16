@@ -26,7 +26,7 @@ public class firstCharacter : MonoBehaviour
         if (CharacterOnScreen == true)
         {
             //dialogue.GetComponent<DialogueManager>().Invoke("StartDialogue", 0);
-            print("he is among us");
+            //print("he is among us");
 
         }
     }

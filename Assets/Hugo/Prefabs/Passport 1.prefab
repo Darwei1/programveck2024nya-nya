@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4211403418494659557}
   - component: {fileID: 8317858633765013392}
   - component: {fileID: 1866379277994976293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Passport 1
   m_TagString: B
   m_Icon: {fileID: 0}
