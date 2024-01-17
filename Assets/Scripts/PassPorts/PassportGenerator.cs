@@ -52,10 +52,18 @@ public class PassportGenerator : MonoBehaviour
     "Plutonix",
     "Cerion"
     };
-    List<string> socialStatus = new List<string>{
+    List<string> socialStatuses = new List<string>{
         "Actively Criminal", 
         "Legal", 
         "Former gang criminal",
+    };
+    
+    List<string> incomes = new List<string>{
+        "Rich",
+        "Working Class",
+        "Homeless",
+        "Middle Class",
+        "Lower Class",
     };
     // Random info about ppl
 	public float z = 0;
@@ -63,13 +71,14 @@ public class PassportGenerator : MonoBehaviour
     public TextMesh text;
 	const int baseFakeValue = 7;
 
+    public bool isLetterValid = true;
 	public void Generate()
 	{
 		string firstName = PickRandomFromList(firstNames) + " ";
 		string surname = PickRandomFromList(surNames);
 		string planet = PickRandomFromList(planets);
-
-		bool isLetterValid = true;
+        string socialStatus = PickRandomFromList(socialStatuses);
+        string income = PickRandomFromList(incomes);
 
 		value = Random.Range(1, 10);
         print(value);
@@ -83,10 +92,12 @@ public class PassportGenerator : MonoBehaviour
 
 		string address = firstName + surname + "\n" + planet;
 
+        /*
 		z+= .2f;
 		if (z > 8.5)
 			z = 0;
-
+        */
+        
         print(firstName);
         print(planet);
         print(surname);
