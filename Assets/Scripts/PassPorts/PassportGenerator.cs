@@ -52,6 +52,11 @@ public class PassportGenerator : MonoBehaviour
     "Plutonix",
     "Cerion"
     };
+    List<string> socialStatus = new List<string>{
+        "Actively Criminal", 
+        "Legal", 
+        "Former gang criminal",
+    };
     // Random info about ppl
 	public float z = 0;
     public int value;
@@ -88,6 +93,7 @@ public class PassportGenerator : MonoBehaviour
 
         text.text = address;
 	}
+    //takes a List<string> as input and returns a randomly selected string from the list.
 	string PickRandomFromList(List<string> list)
 	{
 		int index = Mathf.RoundToInt(Random.Range(0, list.Count));
