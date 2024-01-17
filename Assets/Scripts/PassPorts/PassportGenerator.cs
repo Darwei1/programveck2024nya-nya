@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PassportGenerator : MonoBehaviour
 {
+    public GameObject currentPassport;
+
+
     List<string> firstNames = new List<string> {
     "Zarnak",
     "Xylara",
@@ -87,6 +90,37 @@ public class PassportGenerator : MonoBehaviour
     public int dobMonth;
     public int dobDay;
     public bool isLetterValid = true;
+
+
+    private void FixedUpdate()
+    {
+        if (currentPassport == null)
+        {
+            currentPassport = GameObject.FindGameObjectWithTag("A");
+        }
+        else if(nameText == null)
+        {
+            
+            
+                ReadPassport();
+            
+        }
+       
+        
+    }
+
+    void ReadPassport()
+    {
+        nameText = currentPassport.transform.GetChild(0).GetComponent<TextMesh>();
+        dateOfBirthText = currentPassport.transform.GetChild(1).GetComponent<TextMesh>();
+        sexText = currentPassport.transform.GetChild(2).GetComponent<TextMesh>();
+        planetText = currentPassport.transform.GetChild(3).GetComponent<TextMesh>();
+        socialStatusText = currentPassport.transform.GetChild(4).GetComponent<TextMesh>();
+        incomeText = currentPassport.transform.GetChild(5).GetComponent<TextMesh>();
+        expirationDateText = currentPassport.transform.GetChild(6).GetComponent<TextMesh>();
+    }
+
+
 	public void Generate()
 	{
 		string firstName = PickRandomFromList(firstNames) + " ";
