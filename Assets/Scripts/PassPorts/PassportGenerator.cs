@@ -101,13 +101,8 @@ public class PassportGenerator : MonoBehaviour // Diyor
         }
         else if(nameText == null)
         {
-            
-            
-                ReadPassport();
-            
+            ReadPassport();
         }
-       
-        
     }
 
     void ReadPassport()
