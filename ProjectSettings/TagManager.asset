@@ -11,6 +11,7 @@ TagManager:
   - B
   - C
   - D
+  - Canvas
   layers:
   - Default
   - TransparentFX
