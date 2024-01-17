@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Pointsystem : PassportMatching //gjort av Jack
 {
-    public Text moneyText;
+    public TextMesh moneyText;
     private int playerMoney;
+    public TextMesh canvasText;
 
     void Start()
     {
@@ -16,7 +17,6 @@ public class Pointsystem : PassportMatching //gjort av Jack
 
         MindrePengar(30);
 
-        UpdateUI();
     }
 
     public void MerPengar(int amount) //if choice right then get money and display money value
@@ -28,6 +28,9 @@ public class Pointsystem : PassportMatching //gjort av Jack
             print("Added " + amount + " to money. Current money: " + playerMoney);
 
             SavePlayerMoney();
+
+            UpdateUI();
+
         }
 
     }
@@ -40,6 +43,9 @@ public class Pointsystem : PassportMatching //gjort av Jack
             print("Subtracted " + amount + " from money. Current money: " + playerMoney);
 
             SavePlayerMoney();
+
+            UpdateUI();
+
         }
 
     }
@@ -49,11 +55,13 @@ public class Pointsystem : PassportMatching //gjort av Jack
         PlayerPrefs.SetInt("PlayerMoney", playerMoney);
 
         PlayerPrefs.Save();
+
     }
 
     private void LoadPlayerMoney() //load the player money amount
     {
         playerMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+
     }
 
     private void UpdateUI() //update the UI to show the money amount
@@ -64,6 +72,10 @@ public class Pointsystem : PassportMatching //gjort av Jack
         }
     }
 
+    public void Update()
+    {
+        UpdateUI();
 
+    }
 
 }
