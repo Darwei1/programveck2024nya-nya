@@ -4,7 +4,7 @@ using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PassportGenerator : MonoBehaviour
+public class PassportGenerator : MonoBehaviour // Diyor
 {
     public GameObject currentPassport;
 
@@ -74,7 +74,8 @@ public class PassportGenerator : MonoBehaviour
      };
     // Random info about ppl
     public int value;
-
+    
+    // variables for textmeshes in passports
     #region Textmesh
     public TextMesh nameText;
     public TextMesh dateOfBirthText;
@@ -85,7 +86,7 @@ public class PassportGenerator : MonoBehaviour
     public TextMesh expirationDateText;
     #endregion
 
-	const int baseFakeValue = 7;
+	const int baseFakeValue = 7; // how big chance for the Planet in the passport to be a real planet
     public int dobYear;
     public int dobMonth;
     public int dobDay;
@@ -123,6 +124,7 @@ public class PassportGenerator : MonoBehaviour
 
 	public void Generate()
 	{
+        // Pick a random thing from every list
 		string firstName = PickRandomFromList(firstNames) + " ";
 		string surname = PickRandomFromList(surNames);
 		string planet = PickRandomFromList(planets);
@@ -131,6 +133,8 @@ public class PassportGenerator : MonoBehaviour
         string sex = PickRandomFromList(sexes);
 
 		value = Random.Range(1, 10);
+
+        // Random Birth Date
         dobYear = Random.Range(1000, 2500);
         dobMonth = Random.Range(1, 12);
         dobDay = Random.Range(1, 28);
@@ -146,6 +150,7 @@ public class PassportGenerator : MonoBehaviour
 				planet = PickRandomFromList(fakePlanets) + " is FAKE";
 		}
 
+        // Sets the values for every thing in the pass
 		string passName = firstName + surname;
         string passSex = sex;
         string passPlanet = planet;
@@ -153,6 +158,7 @@ public class PassportGenerator : MonoBehaviour
         string passIncome = income;
         string passEXPDate = expDateYear.ToString() + "-" + dobMonth + "-" + dobDay;
 
+        // Sets the text to following values
         nameText.text = passName;
         sexText.text = sex;
         dateOfBirthText.text = dobValue;
@@ -165,6 +171,7 @@ public class PassportGenerator : MonoBehaviour
         print(planet);
         print(surname);
 	}
+
     //takes a List<string> as input and returns a randomly selected string from the list.
 	string PickRandomFromList(List<string> list)
 	{
