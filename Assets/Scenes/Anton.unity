@@ -379,8 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 8998300035644350874, guid: 995c9b2a23190bd4b9d047661d75e822, type: 3}
-  script: {fileID: 1978183533}
-  Button: {fileID: 137225312}
+  buttonScript: {fileID: 1978183533}
 --- !u!4 &1189840355
 Transform:
   m_ObjectHideFlags: 0
