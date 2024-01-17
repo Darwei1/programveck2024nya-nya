@@ -57,7 +57,6 @@ public class PassportGenerator : MonoBehaviour
         "Legal", 
         "Former gang criminal",
     };
-    
     List<string> incomes = new List<string>{
         "Rich",
         "Working Class",
@@ -65,12 +64,28 @@ public class PassportGenerator : MonoBehaviour
         "Middle Class",
         "Lower Class",
     };
+     List<string> sexes = new List<string>{
+        "Female",
+        "Male",
+        "Non binary"
+     };
     // Random info about ppl
-	public float z = 0;
     public int value;
-    public TextMesh text;
-	const int baseFakeValue = 7;
 
+    #region Textmesh
+    public TextMesh nameText;
+    public TextMesh dateOfBirthText;
+    public TextMesh sexText;
+    public TextMesh planetText;
+    public TextMesh socialStatusText;
+    public TextMesh incomeText;
+    public TextMesh expirationDateText;
+    #endregion
+
+	const int baseFakeValue = 7;
+    public int dobYear;
+    public int dobMonth;
+    public int dobDay;
     public bool isLetterValid = true;
 	public void Generate()
 	{
@@ -79,9 +94,16 @@ public class PassportGenerator : MonoBehaviour
 		string planet = PickRandomFromList(planets);
         string socialStatus = PickRandomFromList(socialStatuses);
         string income = PickRandomFromList(incomes);
+        string sex = PickRandomFromList(sexes);
 
 		value = Random.Range(1, 10);
-        print(value);
+        dobYear = Random.Range(1000, 2500);
+        dobMonth = Random.Range(1, 12);
+        dobDay = Random.Range(1, 28);
+
+        int expDateYear = dobYear + Random.Range(20, 500);
+
+        string dobValue = dobYear + "-" + dobMonth + "-" + dobDay;
 
 		//generate incorrect letter
 		if (value >= baseFakeValue)
@@ -90,19 +112,24 @@ public class PassportGenerator : MonoBehaviour
 				planet = PickRandomFromList(fakePlanets) + " is FAKE";
 		}
 
-		string address = firstName + surname + "\n" + planet;
+		string passName = firstName + surname;
+        string passSex = sex;
+        string passPlanet = planet;
+        string passSStatus = socialStatus;
+        string passIncome = income;
+        string passEXPDate = expDateYear.ToString() + "-" + dobMonth + "-" + dobDay;
 
-        /*
-		z+= .2f;
-		if (z > 8.5)
-			z = 0;
-        */
-        
+        nameText.text = passName;
+        sexText.text = sex;
+        dateOfBirthText.text = dobValue;
+        planetText.text = passPlanet;
+        socialStatusText.text = passSStatus;
+        incomeText.text = passIncome;
+        expirationDateText.text = passEXPDate;
+
         print(firstName);
         print(planet);
         print(surname);
-
-        text.text = address;
 	}
     //takes a List<string> as input and returns a randomly selected string from the list.
 	string PickRandomFromList(List<string> list)
