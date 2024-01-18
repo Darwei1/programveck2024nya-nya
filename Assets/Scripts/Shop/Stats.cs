@@ -57,16 +57,17 @@ public class Stats : MonoBehaviour
 
     public void Damage(float damagePoints)
     {
-        if (rentPoints > 0 || foodPoints > 0 || heatPoints > 0)
-            rentPoints -= damagePoints;
-            foodPoints -= damagePoints;
-            heatPoints -= damagePoints;
+        rentPoints -= damagePoints;
+        foodPoints -= damagePoints;
+        heatPoints -= damagePoints;  
     }
     public void Heal(float statPoints)
     {
-        if (rentPoints < 0 || foodPoints < 0 || heatPoints < 0)
-            rentPoints += statPoints;
-            foodPoints += statPoints;
-            heatPoints += statPoints;
+        rentPoints += statPoints;
+        foodPoints += statPoints;
+        heatPoints += statPoints;
+        print(rentPoints);
+        print(foodPoints);
+        print(heatPoints);
     }
 }

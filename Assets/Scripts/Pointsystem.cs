@@ -17,7 +17,7 @@ public class Pointsystem : PassportMatching //gjort av Jack
         MerPengar(5);
 
         MindrePengar(2);
-        print("Dattebayo");
+
     }
 
     public void MerPengar(int amount) //if choice right then get money and display money value
@@ -30,7 +30,6 @@ public class Pointsystem : PassportMatching //gjort av Jack
 
             UpdateUI();
 
-            print("Dattebayo daiskida");
         if (choice == true)
         {
             
