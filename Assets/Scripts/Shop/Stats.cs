@@ -10,15 +10,19 @@ public class Stats : MonoBehaviour
     public Image[] foodRent;
     public Image[] heatRent;
     #endregion
-    float rentPoints, maxRentPoints = 90;
-    float foodPoints, maxFoodPoints = 90;
-    float heatPoints, maxHeatPoints = 90;
+    public float rentPoints; 
+    float maxRentPoints = 90f;
+    public float foodPoints; 
+    float maxFoodPoints = 90f;
+    public float heatPoints; 
+    float maxHeatPoints = 90f;
     void Start()
     {
         // set points to max points
         rentPoints = maxRentPoints;
         foodPoints = maxFoodPoints;
         heatPoints = maxHeatPoints;
+        StatsRandomReducer();
     }
     void Update()
     {
@@ -55,13 +59,13 @@ public class Stats : MonoBehaviour
         return ((pointNumber * 10) >= _health);
     }
 
-    public void Damage(float damagePoints)
+    public void Damage(float damagePoints) // mostly for debug 
     {
         rentPoints -= damagePoints;
         foodPoints -= damagePoints;
         heatPoints -= damagePoints;  
     }
-    public void Heal(float statPoints)
+    public void Heal(float statPoints) // ^^
     {
         rentPoints += statPoints;
         foodPoints += statPoints;
@@ -70,4 +74,46 @@ public class Stats : MonoBehaviour
         print(foodPoints);
         print(heatPoints);
     }
+    
+    // It basically takes a random number 1-3 and multiplies it with 10 so its easier for the statBars to decrease bla bla
+    public void StatsRandomReducer(){
+        int randomRentDecrease = Random.Range(1, 3);
+        int randomFoodDecrease = Random.Range(1, 3);
+        int randomHeatDecrease = Random.Range(1, 3);
+
+        rentPoints -= randomRentDecrease * 10;
+        foodPoints -= randomFoodDecrease * 10;
+        heatPoints -= randomHeatDecrease * 10;
+
+        print(randomRentDecrease + " " + randomFoodDecrease + " " + randomHeatDecrease);
+    }
+
+    #region all the functions for these bars
+    public void AddRentFunction(float statPoints){
+        rentPoints += statPoints;
+    }
+    public void RemoveRentFunction(float statPoints){
+        if (rentPoints > 0){
+            rentPoints -= statPoints;
+        }
+    }
+
+    public void AddFoodFunction(float statPoints){
+        foodPoints += statPoints;
+    }
+    public void RemoveFoodFunction(float statPoints){
+        if (foodPoints > 0){
+            foodPoints -= statPoints;
+        }
+    }
+
+    public void AddHeatFunction(float statPoints){
+        heatPoints += statPoints;
+    }
+    public void RemoveHeatFunction(float statPoints){
+        if (heatPoints > 0){
+            heatPoints -= statPoints;
+        }
+    }
+    #endregion
 }
