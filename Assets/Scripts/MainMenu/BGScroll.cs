@@ -28,7 +28,7 @@ public class BGScroll : MonoBehaviour // Diyor. Gjorde s� att bakgrunden s�g
 
         if (myUIGroup.alpha < 1 && doneAnim)
         {
-            myUIGroup.alpha += 0.009f;
+            myUIGroup.alpha += 0.008f;
         }
     }
 }
