@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
 
     private int index;
 
+    
+
     void Start()
     {
         textComponent.text = string.Empty;
@@ -28,7 +30,10 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+                Destroy(this.gameObject);
+                
             }
         }
     }
