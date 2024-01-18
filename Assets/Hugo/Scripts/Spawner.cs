@@ -6,12 +6,14 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] CharacterPrefab;
     public GameObject latestCharacter;
-   
+    
+    PassportGenerator passportGenerator;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        passportGenerator = GetComponent<PassportGenerator>();
+         passportGenerator.Generate();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
        latestCharacter = Instantiate(CharacterPrefab[Random.Range(0,CharacterPrefab.Length)], new Vector3(0, 1.71f, 0), Quaternion.identity);
+      
     }
 
     public void spawnTimer()
@@ -62,10 +65,9 @@ public class Spawner : MonoBehaviour
         Destroy(objectToDestroy, 1);
     }
 
-    void firstSpawn()
+    public void Dialogue()
     {
-        //Instantiate(CharacterPrefab, new Vector3(0, 1.71f, 0), Quaternion.identity);
-        //print("ballsack");
-
+        GetComponent<DialogueManager>().StartDialogue();
+        
     }
 }

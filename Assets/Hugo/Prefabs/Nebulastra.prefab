@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2565165597534571488}
   - component: {fileID: 4960359592803731070}
   - component: {fileID: 1450697173966671060}
-  m_Layer: 0
+  - component: {fileID: -7339053048320101798}
+  m_Layer: 7
   m_Name: Nebulastra
   m_TagString: guest
   m_Icon: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: eaf8c42864a977e4abf2e475f5a6baa4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -180,3 +181,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8855023, y: 3.7575717}
   m_EdgeRadius: 0
+--- !u!114 &-7339053048320101798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067513262010752473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c822602cc8b79940b54ccadf2c1e13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choice: 0
+  passports: []

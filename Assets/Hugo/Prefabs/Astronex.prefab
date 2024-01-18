@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: -5121993890295766220}
   - component: {fileID: 2674795200981669111}
   - component: {fileID: -6773860901561368996}
-  m_Layer: 0
+  - component: {fileID: -3973437264412949407}
+  m_Layer: 7
   m_Name: Astronex
   m_TagString: guest
   m_Icon: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 179621663ab601e4eb8b1bd01421d3fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -180,3 +181,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3973437264412949407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102064720103527038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c822602cc8b79940b54ccadf2c1e13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choice: 0
+  passports: []
