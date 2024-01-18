@@ -10,16 +10,23 @@ public class Stats : MonoBehaviour
     public Image[] foodRent;
     public Image[] heatRent;
     #endregion
-    float points, maxPoints = 90;
+    float rentPoints, maxRentPoints = 90;
+    float foodPoints, maxFoodPoints = 90;
+    float heatPoints, maxHeatPoints = 90;
     void Start()
     {
         // set points to max points
-        points = maxPoints;
+        rentPoints = maxRentPoints;
+        foodPoints = maxFoodPoints;
+        heatPoints = maxHeatPoints;
     }
     void Update()
     {
         // Make sure points do not go over maxPoints
-        if (points > maxPoints) points = maxPoints;
+        if (rentPoints > maxRentPoints) rentPoints = maxRentPoints;
+        if (foodPoints > maxFoodPoints) foodPoints = maxFoodPoints;
+        if (heatPoints > maxHeatPoints) heatPoints = maxHeatPoints;
+
         StatBarFiller();
     }
 
@@ -29,7 +36,15 @@ public class Stats : MonoBehaviour
         // go through rent related images and enable/disable based on points
         for (int i = 0; i < rentRent.Length; i++)
         {
-            rentRent[i].enabled = !DisplayRentPoints(points, i);
+            rentRent[i].enabled = !DisplayRentPoints(rentPoints, i);
+        }
+        for (int i = 0; i < foodRent.Length; i++)
+        {
+            foodRent[i].enabled = !DisplayRentPoints(foodPoints, i);
+        }
+        for (int i = 0; i < heatRent.Length; i++)
+        {
+            heatRent[i].enabled = !DisplayRentPoints(heatPoints, i);
         }
     }
 
@@ -42,12 +57,16 @@ public class Stats : MonoBehaviour
 
     public void Damage(float damagePoints)
     {
-        if (points > 0)
-            points -= damagePoints;
+        if (rentPoints > 0 || foodPoints > 0 || heatPoints > 0)
+            rentPoints -= damagePoints;
+            foodPoints -= damagePoints;
+            heatPoints -= damagePoints;
     }
     public void Heal(float statPoints)
     {
-        if (points < maxPoints)
-            points += statPoints;
+        if (rentPoints < 0 || foodPoints < 0 || heatPoints < 0)
+            rentPoints += statPoints;
+            foodPoints += statPoints;
+            heatPoints += statPoints;
     }
 }

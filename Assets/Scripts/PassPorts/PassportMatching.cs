@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,12 @@ public class PassportMatching : MonoBehaviour
             Debug.Log(objectFromListA.name + " and " + objectFromListB.name + " have different numbers.");
         }
     }
+
+    private bool CompareObjectsFromDifferentLists(GameObject objectFromListA, GameObject objectFromListB)
+    {
+        throw new NotImplementedException();
+    }
+
     void AssignNumbersToList(List<GameObject> gameObjectsList)
     {
         for (int i = 0; i < gameObjectsList.Count; i++)
