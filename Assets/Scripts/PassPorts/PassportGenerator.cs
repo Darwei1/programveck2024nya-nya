@@ -118,6 +118,8 @@ public class PassportGenerator : MonoBehaviour
         socialStatusText = currentPassport.transform.GetChild(4).GetComponent<TextMesh>();
         incomeText = currentPassport.transform.GetChild(5).GetComponent<TextMesh>();
         expirationDateText = currentPassport.transform.GetChild(6).GetComponent<TextMesh>();
+
+        Generate();
     }
 
 
