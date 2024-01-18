@@ -175,7 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSounds: []
-  sfxSounds: []
+  sfxSounds:
+  - name: knapp
+    clip: {fileID: 8300000, guid: 11d648753cb8687439e8f36e92d05d56, type: 3}
   musicSource: {fileID: 5617718166266836373}
   sfxSource: {fileID: 614678939958784316}
 --- !u!1 &7964041094231473018
