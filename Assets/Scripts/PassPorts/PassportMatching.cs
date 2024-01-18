@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class PassportMatching : MonoBehaviour
 {
-    public GameObject Object1;
-    public GameObject Object2;
-    public GameObject Object3;
-    public GameObject Object4;
-
-    public GameObject pass1;
-    public GameObject pass2;
-    public GameObject pass3;
-    public GameObject pass4;
-    
-
     public bool choice;
     GameObject playerRef;
     public GameObject[] passports;
@@ -27,6 +16,7 @@ public class PassportMatching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerRef = GameObject.FindWithTag("guest");
 
 
         AssignNumbersToList(guests);
@@ -54,47 +44,33 @@ public class PassportMatching : MonoBehaviour
         }
     }
 
-    bool CompareObjectsFromDifferentLists(GameObject objA, GameObject objB)
+    private void Update()
     {
-        int numberA = ExtractNumber(objA.name);
-        int numberB = ExtractNumber(objB.name);
-
-        return numberA == numberB;
-    }
-
-    
-    bool CompareObjects(GameObject obj1, GameObject obj2)
-    {
-        int number1 = ExtractNumber(obj1.name);
-        int number2 = ExtractNumber(obj2.name);
-
-        return number1 == number2;
-    }
-
-    int ExtractNumber(string input)
-    {
-        int number = 0;
-        string numberString = "";
-
-        for (int i = 0; i < input.Length; i++)
+        for (int i = 0; i < passports.Length; i++)
         {
-            if (char.IsDigit(input[i]))
+            if (passports[i].layer == playerRef.layer)
             {
-                numberString += input[i];
+                print("ARE MATCHING!");
             }
-            else if (!string.IsNullOrEmpty(numberString))
+            else
             {
-                break;
+                print("ARE NOT MATCHING!");
             }
         }
-
-        int.TryParse(numberString, out number);
-
-        return number;
     }
 
+    void compareLayers()
+    {
+        for (int i = 0; i < passports.Length; i++)
+        {
+            if (passports[i].layer == playerRef.layer)
+            {
+                print("ARE MATCHING!");
+            }
+            else
+            {
+                print("ARE NOT MATCHING!");
+            }
+        }
+    }
 }
-
-   
-
- 

@@ -6,42 +6,7 @@ using UnityEngine.Animations;
 public class SpawnManager : GameManager
 {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Det här är gamla S   pawnManager
-    /*public GameObject char_Prefab;
+    public GameObject char_Prefab;
 
     public float timer;
 
@@ -101,6 +66,6 @@ public class SpawnManager : GameManager
     {
         no = true;
         spawnPermit = true;
-    }*/
+    }
 
 }

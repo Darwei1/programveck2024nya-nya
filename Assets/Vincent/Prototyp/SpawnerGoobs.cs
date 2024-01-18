@@ -2,32 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerGoobs : MonoBehaviour
+public class SpawnerGoobs : DialogueManager
 {
     public GameObject CharacterPrefab;
     public GameObject latestCharacter;
 
-    public DialogueManager dialogueManager;
-
 
     // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+ 
 
     public void Spawn()
     {
         latestCharacter = Instantiate(CharacterPrefab, new Vector3(0, 1.71f, 0), Quaternion.identity);
-
-
-        dialogueManager.StartDialogue();
+        StartDialogue();
     }
 
     public void spawnTimer()
@@ -58,6 +47,7 @@ public class SpawnerGoobs : MonoBehaviour
     void offScreenDestroy(GameObject objectToDestroy)
     {
         Destroy(objectToDestroy, 1);
+        
     }
 
 }
