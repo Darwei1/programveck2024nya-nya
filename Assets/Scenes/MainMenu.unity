@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doneAnim: 0
   targetObject: {fileID: 3686173}
-  speed: 4
+  speed: 3
   myUIGroup: {fileID: 3686175}
 --- !u!1 &921169381
 GameObject:
