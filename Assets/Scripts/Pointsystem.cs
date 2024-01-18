@@ -1,29 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Pointsystem : PassportMatching //gjort av Jack
 {
-    public TextMesh moneyText;
-    private int playerMoney;
+    public TextMeshProUGUI moneyText;
+    public int playerMoney;
     public TextMesh canvasText;
 
     void Start()
     {
         LoadPlayerMoney();
 
-        MerPengar(100);
+        MerPengar(5);
 
-        MindrePengar(30);
-
+        MindrePengar(2);
+        print("Dattebayo");
     }
 
     public void MerPengar(int amount) //if choice right then get money and display money value
     {
-        if (choice == true)
-        {
-            playerMoney += amount;
+        playerMoney += amount;
 
             print("Added " + amount + " to money. Current money: " + playerMoney);
 
@@ -31,20 +30,26 @@ public class Pointsystem : PassportMatching //gjort av Jack
 
             UpdateUI();
 
+            print("Dattebayo daiskida");
+        if (choice == true)
+        {
+            
+
         }
 
     }
 
     public void MindrePengar(int amount) // if wrong choice then no money
     {
-        if (choice == false)
-        {
-            playerMoney -= amount;
+        playerMoney -= amount;
             print("Subtracted " + amount + " from money. Current money: " + playerMoney);
 
             SavePlayerMoney();
 
             UpdateUI();
+        if (choice == false)
+        {
+            
 
         }
 
