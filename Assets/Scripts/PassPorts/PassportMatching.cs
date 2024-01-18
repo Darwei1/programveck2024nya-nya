@@ -4,49 +4,97 @@ using UnityEngine;
 
 public class PassportMatching : MonoBehaviour
 {
+    public GameObject Object1;
+    public GameObject Object2;
+    public GameObject Object3;
+    public GameObject Object4;
 
-
+    public GameObject pass1;
+    public GameObject pass2;
+    public GameObject pass3;
+    public GameObject pass4;
+    
 
     public bool choice;
     GameObject playerRef;
     public GameObject[] passports;
 
+    List<GameObject> Gäster = new List<GameObject>();
+    
+    List<GameObject> Pass = new List<GameObject>(); 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        playerRef = GameObject.FindWithTag("guest");
 
 
-        //compareLayers();
-    }
+        AssignNumbersToList(Gäster);
 
-    private void Update()
-    {
-        for (int i = 0; i < passports.Length; i++)
+        AssignNumbersToList(Pass);
+
+        GameObject objectFromListA = Gäster[0];
+        GameObject objectFromListB = Pass[0];
+
+        if (CompareObjectsFromDifferentLists(objectFromListA, objectFromListB))
         {
-            if (passports[i].layer == playerRef.layer)
-            {
-                print("ARE MATCHING!");
-            }
-            else
-            {
-                print("ARE NOT MATCHING!");
-            }
+            Debug.Log(objectFromListA.name + " and " + objectFromListB.name + " have matching numbers.");
+        }
+        else
+        {
+            Debug.Log(objectFromListA.name + " and " + objectFromListB.name + " have different numbers.");
+        }
+    }
+    void AssignNumbersToList(List<GameObject> gameObjectsList)
+    {
+        for (int i = 0; i < gameObjectsList.Count; i++)
+        {
+            gameObjectsList[i].name = "Object " + i;
+            Debug.Log(gameObjectsList[i].name + " assigned number: " + i);
         }
     }
 
-    void compareLayers()
+    bool CompareObjectsFromDifferentLists(GameObject objA, GameObject objB)
     {
-        for (int i = 0; i < passports.Length; i++)
+        int numberA = ExtractNumber(objA.name);
+        int numberB = ExtractNumber(objB.name);
+
+        return numberA == numberB;
+    }
+
+    
+    bool CompareObjects(GameObject obj1, GameObject obj2)
+    {
+        int number1 = ExtractNumber(obj1.name);
+        int number2 = ExtractNumber(obj2.name);
+
+        return number1 == number2;
+    }
+
+    int ExtractNumber(string input)
+    {
+        int number = 0;
+        string numberString = "";
+
+        for (int i = 0; i < input.Length; i++)
         {
-            if (passports[i].layer == playerRef.layer)
+            if (char.IsDigit(input[i]))
             {
-                print("ARE MATCHING!");
+                numberString += input[i];
             }
-            else
+            else if (!string.IsNullOrEmpty(numberString))
             {
-                print("ARE NOT MATCHING!");
+                break;
             }
         }
+
+        int.TryParse(numberString, out number);
+
+        return number;
     }
+
 }
+
+   
+
+ 
