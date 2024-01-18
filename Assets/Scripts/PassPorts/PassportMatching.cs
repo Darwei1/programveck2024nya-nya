@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PassportMatching : MonoBehaviour
 {
-
-
-
     public bool choice;
     GameObject playerRef;
     public GameObject[] passports;
