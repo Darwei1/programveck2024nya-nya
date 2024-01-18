@@ -19,7 +19,7 @@ public class PassportMatching : MonoBehaviour
     GameObject playerRef;
     public GameObject[] passports;
 
-    List<GameObject> G�ster = new List<GameObject>();
+    List<GameObject> guests = new List<GameObject>();
     
     List<GameObject> Pass = new List<GameObject>(); 
 
@@ -29,11 +29,11 @@ public class PassportMatching : MonoBehaviour
     {
 
 
-        AssignNumbersToList(G�ster);
+        AssignNumbersToList(guests);
 
         AssignNumbersToList(Pass);
 
-        GameObject objectFromListA = G�ster[0];
+        GameObject objectFromListA = guests[0];
         GameObject objectFromListB = Pass[0];
 
         if (CompareObjectsFromDifferentLists(objectFromListA, objectFromListB))
