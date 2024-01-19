@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TheMagnumOpus : MonoBehaviour
+public class TheMagnumOpus : MonoBehaviour  skapad av vincent
 {
 
     public Transform Magnifier;

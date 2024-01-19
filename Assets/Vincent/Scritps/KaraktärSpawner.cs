@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KaraktärSpawner : MonoBehaviour
+public class KaraktärSpawner : MonoBehaviour // skapad av vincent
 {
 
     public GameObject[] karaktärer_;

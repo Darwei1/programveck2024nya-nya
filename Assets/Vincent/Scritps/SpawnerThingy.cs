@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerThingy : MonoBehaviour
+public class SpawnerThingy : MonoBehaviour // rånad från hugo (jag skapade inte det här)
 {
     public GameObject[] CharacterPrefab;
 

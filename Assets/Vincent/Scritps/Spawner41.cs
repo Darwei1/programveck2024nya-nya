@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner41 : MonoBehaviour
+public class Spawner41 : MonoBehaviour // rånad från hugo
 {
     public GameObject[] CharacterPrefab;
     public GameObject latestCharacter;
