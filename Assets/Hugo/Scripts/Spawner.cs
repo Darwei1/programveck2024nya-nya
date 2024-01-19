@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         passportGenerator = GetComponent<PassportGenerator>();
-        passportGenerator.Generate();
+         passportGenerator.Generate();
     }
 
     // Update is called once per frame

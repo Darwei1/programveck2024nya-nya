@@ -3,46 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassportMatching : MonoBehaviour //gjort av jack och anton
+public class PassportMatching : MonoBehaviour
 {
-    public GameObject Object1;
-    public GameObject Object2;
-    public GameObject Object3;
-    public GameObject Object4;
-    public GameObject Object5;
-    public GameObject Object6;
-
-
-    public GameObject pass1;
-    public GameObject pass2;
-    public GameObject pass3;
-    public GameObject pass4;
-
-    public GameObject playerRef;
-    
-
     public bool choice;
+    GameObject playerRef;
     public GameObject[] passports;
 
     List<GameObject> guests = new List<GameObject>();
     
-    List<GameObject> Pass = new List<GameObject>();
-
-
-    GameObject currentPassport;
-    GameObject currentGuest;
+    List<GameObject> Pass = new List<GameObject>(); 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerRef = GameObject.FindWithTag("guest");
 
-        guests.Add(Object1);
-        guests.Add(Object2);
-        guests.Add(Object3);
-        guests.Add(Object4);
-        guests.Add(Object5);
-        guests.Add(Object6);
 
         AssignNumbersToList(guests);
 
@@ -90,5 +66,18 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
         }
     }
 
-    
+    void compareLayers()
+    {
+        for (int i = 0; i < passports.Length; i++)
+        {
+            if (passports[i].layer == playerRef.layer)
+            {
+                print("ARE MATCHING!");
+            }
+            else
+            {
+                print("ARE NOT MATCHING!");
+            }
+        }
+    }
 }
