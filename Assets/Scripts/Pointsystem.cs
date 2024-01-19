@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pointsystem : PassportMatching //gjort av Jack
+public class Pointsystem : PassportMatching //gjort av Jack (Jack döp aldrig funktioner igen på svenska - Diyor)
 {
     public TextMeshProUGUI moneyText;
     public int playerMoney;

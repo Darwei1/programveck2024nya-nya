@@ -16,13 +16,19 @@ public class Stats : MonoBehaviour
     float maxFoodPoints = 90f;
     public float heatPoints; 
     float maxHeatPoints = 90f;
+
+    public Pointsystem money;
+
     void Start()
     {
         // set points to max points
         rentPoints = maxRentPoints;
         foodPoints = maxFoodPoints;
         heatPoints = maxHeatPoints;
-        StatsRandomReducer();
+
+        money = GetComponent<Pointsystem>();
+        
+        StatsRandomReducer(); // Everytime this script activates it randomly decreases all of the stats
     }
     void Update()
     {
@@ -90,7 +96,12 @@ public class Stats : MonoBehaviour
 
     #region all the functions for these bars
     public void AddRentFunction(float statPoints){
-        rentPoints += statPoints;
+        if (money.playerMoney >= 5 && rentPoints <= 90)
+        {
+            rentPoints += statPoints;
+            money.playerMoney -= 5;
+        }
+        
     }
     public void RemoveRentFunction(float statPoints){
         if (rentPoints > 0){
