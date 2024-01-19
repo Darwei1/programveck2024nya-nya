@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Pointsystem : PassportMatching //gjort av Jack
 {
-    public TextMesh moneyText;
+    public TextMeshProUGUI moneyText;
     public int playerMoney;
     public TextMesh canvasText;
 
@@ -13,23 +14,22 @@ public class Pointsystem : PassportMatching //gjort av Jack
     {
         LoadPlayerMoney();
 
-        MerPengar(100);
-
-        MindrePengar(30);
+        //MerPengar(20);
 
     }
 
     public void MerPengar(int amount) //if choice right then get money and display money value
-    {
-        if (choice == true)
-        {
-            playerMoney += amount;
+    {   
+        playerMoney += amount;
 
             print("Added " + amount + " to money. Current money: " + playerMoney);
 
             SavePlayerMoney();
 
             UpdateUI();
+        if (choice == true)
+        {
+            
 
         }
 
@@ -37,14 +37,15 @@ public class Pointsystem : PassportMatching //gjort av Jack
 
     public void MindrePengar(int amount) // if wrong choice then no money
     {
-        if (choice == false)
-        {
-            playerMoney -= amount;
+        playerMoney -= amount;
             print("Subtracted " + amount + " from money. Current money: " + playerMoney);
 
             SavePlayerMoney();
 
             UpdateUI();
+        if (choice == false)
+        {
+            
 
         }
 

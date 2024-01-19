@@ -117,6 +117,9 @@ public class Stats : MonoBehaviour // Diyor grrr
 
     // Basically i save all the values and change scene
     public void NextDay(){
+
+        money.MerPengar(20);
+
         PlayerPrefs.SetInt("Rent", rentPoints);
         PlayerPrefs.SetInt("Food", foodPoints);
         PlayerPrefs.SetInt("Heat", heatPoints);
