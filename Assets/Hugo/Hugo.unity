@@ -286,6 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00be7ed6636bd540bcb569aabf3162c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 0
+  planetRuleText: {fileID: 2023025156}
+  surnameRuleText: {fileID: 654982657}
+  isLetterValid: 1
 --- !u!4 &24084658
 Transform:
   m_ObjectHideFlags: 0
@@ -671,6 +675,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245717519}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &443127627
 GameObject:
@@ -686,6 +691,9 @@ GameObject:
   m_Name: sfxSource
 =======
 --- !u!1 &317072746
+=======
+--- !u!1 &654982656
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -693,24 +701,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 317072747}
   - component: {fileID: 317072749}
   - component: {fileID: 317072748}
   m_Layer: 0
   m_Name: PLanets
 >>>>>>> Stashed changes
+=======
+  - component: {fileID: 654982659}
+  - component: {fileID: 654982658}
+  - component: {fileID: 654982657}
+  m_Layer: 0
+  m_Name: rule2
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!82 &443127628
 AudioSource:
+=======
+--- !u!102 &654982657
+TextMesh:
+  serializedVersion: 3
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 614678939958784316, guid: 73bf656e0dcc1434e8b1c2bc088618dc, type: 3}
   m_PrefabInstance: {fileID: 1040836060}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 443127627}
   m_Enabled: 1
   serializedVersion: 4
@@ -808,12 +831,137 @@ Transform:
   m_PrefabInstance: {fileID: 1040836060}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443127627}
+=======
+  m_GameObject: {fileID: 654982656}
+  m_Text: 2
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 3
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 40
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: a77b8b3005b9aae4f81db7e82205b659, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+--- !u!23 &654982658
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654982656}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a77b8b3005b9aae4f81db7e82205b659, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &654982659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654982656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.415, y: 0.153, z: 0}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1572788005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &662294728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662294730}
+  - component: {fileID: 662294729}
+  m_Layer: 0
+  m_Name: empty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &662294729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662294728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c822602cc8b79940b54ccadf2c1e13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object1: {fileID: 9102064720103527038, guid: 85f964e240fd9d34abf7c9b6d1840d89, type: 3}
+  Object2: {fileID: 2067513262010752473, guid: f274c8cfcdd017a4f86f61dc0cad4cd3, type: 3}
+  Object3: {fileID: 2067513262010752473, guid: b807d679ef9d2d04c8f6174efff1e63f, type: 3}
+  Object4: {fileID: 2067513262010752473, guid: d78bf24fcac66d04ab6147b5c11cf85f, type: 3}
+  object5: {fileID: 2067513262010752473, guid: 97db15741693e1a4bace80d643a0dead, type: 3}
+  object6: {fileID: 9102064720103527038, guid: 6aa26673d57244949b35406e011e617f, type: 3}
+  pass1: {fileID: 8516040758564783296, guid: 1b825ca7bbc72db46b7a83595a82cf81, type: 3}
+  pass2: {fileID: 0}
+  pass3: {fileID: 0}
+  pass4: {fileID: 0}
+  pass5: {fileID: 0}
+  pass6: {fileID: 0}
+  choice: 0
+  passports: []
+--- !u!4 &662294730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662294728}
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1072002915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628746926
@@ -1177,6 +1325,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+=======
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808081603
@@ -1469,7 +1619,11 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
+<<<<<<< HEAD
   m_SortingOrder: 0
+=======
+  m_SortingOrder: 2
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)
   m_TargetDisplay: 0
 --- !u!224 &1027141472
 RectTransform:
@@ -3184,8 +3338,12 @@ SceneRoots:
   - {fileID: 1649040206}
   - {fileID: 1961868828}
   - {fileID: 1040836060}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - {fileID: 662294730}
 =======
   - {fileID: 1469088226}
 >>>>>>> Stashed changes
+=======
+  - {fileID: 662294730}
+>>>>>>> parent of 6da9182 (Merge branch 'main' of https://github.com/Darwei1/programveck2024nya-nya)

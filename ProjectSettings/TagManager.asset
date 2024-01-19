@@ -4,6 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - area
+  - guest
+  - Guest
+  - Good
+  - Bad
+=======
   - Guest
   - guest
   - area
@@ -12,6 +19,7 @@ TagManager:
   - C
   - D
   - Canvas
+>>>>>>> 63027408199132462df7ec180fc8c263f4a74cb2
   layers:
   - Default
   - TransparentFX
