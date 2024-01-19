@@ -1,48 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassportMatching : MonoBehaviour //gjort av jack och anton
+public class PassportMatching : MonoBehaviour
 {
-    public GameObject Object1;
-    public GameObject Object2;
-    public GameObject Object3;
-    public GameObject Object4;
-    public GameObject object5;
-    public GameObject object6;
-
-    public GameObject pass1;
-    public GameObject pass2;
-    public GameObject pass3;
-    public GameObject pass4;
-    public GameObject pass5;
-    public GameObject pass6;
-    
-
-
     public bool choice;
+    GameObject playerRef;
     public GameObject[] passports;
 
-    List<GameObject> G�ster = new List<GameObject>();
+    List<GameObject> guests = new List<GameObject>();
     
-    List<GameObject> Pass = new List<GameObject>();
-
-
-    GameObject currentPassport;
-    GameObject currentGuest;
+    List<GameObject> Pass = new List<GameObject>(); 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentGuest = GameObject.FindGameObjectWithTag("Guest");
+        playerRef = GameObject.FindWithTag("guest");
 
-        guests.Add(Object1);
-        guests.Add(Object2);
-        guests.Add(Object3);
-        guests.Add(Object4);
-        guests.Add(Object5);
-        guests.Add(Object6);
 
         AssignNumbersToList(guests);
 
@@ -60,6 +36,12 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
             Debug.Log(objectFromListA.name + " and " + objectFromListB.name + " have different numbers.");
         }
     }
+
+    private bool CompareObjectsFromDifferentLists(GameObject objectFromListA, GameObject objectFromListB)
+    {
+        throw new NotImplementedException();
+    }
+
     void AssignNumbersToList(List<GameObject> gameObjectsList)
     {
         for (int i = 0; i < gameObjectsList.Count; i++)
@@ -69,47 +51,33 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
         }
     }
 
-    bool CompareObjectsFromDifferentLists(GameObject objA, GameObject objB)
+    private void Update()
     {
-        int numberA = ExtractNumber(objA.name);
-        int numberB = ExtractNumber(objB.name);
-
-        return numberA == numberB;
-    }
-
-    
-    bool CompareObjects(GameObject obj1, GameObject obj2)
-    {
-        int number1 = ExtractNumber(obj1.name);
-        int number2 = ExtractNumber(obj2.name);
-
-        return number1 == number2;
-    }
-
-    int ExtractNumber(string input)
-    {
-        int number = 0;
-        string numberString = "";
-
-        for (int i = 0; i < input.Length; i++)
+        for (int i = 0; i < passports.Length; i++)
         {
-            if (char.IsDigit(input[i]))
+            if (passports[i].layer == playerRef.layer)
             {
-                numberString += input[i];
+                print("ARE MATCHING!");
             }
-            else if (!string.IsNullOrEmpty(numberString))
+            else
             {
-                break;
+                print("ARE NOT MATCHING!");
             }
         }
-
-        int.TryParse(numberString, out number);
-
-        return number;
     }
 
+    void compareLayers()
+    {
+        for (int i = 0; i < passports.Length; i++)
+        {
+            if (passports[i].layer == playerRef.layer)
+            {
+                print("ARE MATCHING!");
+            }
+            else
+            {
+                print("ARE NOT MATCHING!");
+            }
+        }
+    }
 }
-
-   
-
- 

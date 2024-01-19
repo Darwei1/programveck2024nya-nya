@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         passportGenerator = GetComponent<PassportGenerator>();
-        passportGenerator.Generate();
+         passportGenerator.Generate();
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class Spawner : MonoBehaviour
         
         latestCharacter = GameObject.FindGameObjectWithTag("guest");
         Invoke("Animation1", 0);
-        AudioManager.Instance.PlaySFX("knapp");
+        
         offScreenDestroy(latestCharacter);
         Invoke("Spawn", 3);
     }
@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
     {
         latestCharacter = GameObject.FindGameObjectWithTag("guest");
         Invoke("Animation2", 0);
-        AudioManager.Instance.PlaySFX("knapp");
+       
         offScreenDestroy(latestCharacter);
         Invoke("Spawn", 3);
     }
