@@ -2,37 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassportMatching : MonoBehaviour
+public class PassportMatching : MonoBehaviour //gjort av jack och anton
 {
     public GameObject Object1;
     public GameObject Object2;
     public GameObject Object3;
     public GameObject Object4;
+    public GameObject object5;
+    public GameObject object6;
 
     public GameObject pass1;
     public GameObject pass2;
     public GameObject pass3;
     public GameObject pass4;
+    public GameObject pass5;
+    public GameObject pass6;
     
 
+
     public bool choice;
-    GameObject playerRef;
     public GameObject[] passports;
 
     List<GameObject> Gäster = new List<GameObject>();
     
-    List<GameObject> Pass = new List<GameObject>(); 
+    List<GameObject> Pass = new List<GameObject>();
+
+
+    GameObject currentPassport;
+    GameObject currentGuest;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        currentGuest = GameObject.FindGameObjectWithTag("Guest");
 
+        Gäster.Add(Object1);
+        Gäster.Add(Object2);
+        Gäster.Add(Object3);
+        Gäster.Add(Object4);
+        Gäster.Add(object5);
+        Gäster.Add(object6);
+
+        Pass.Add(pass1);
+        Pass.Add(pass2);
+        Pass.Add(pass3);
+        Pass.Add(pass4);
+        Pass.Add(pass5);
+        Pass.Add(pass6);
 
         AssignNumbersToList(Gäster);
 
         AssignNumbersToList(Pass);
 
+        Debug.Log(Gäster.Count);
         GameObject objectFromListA = Gäster[0];
         GameObject objectFromListB = Pass[0];
 

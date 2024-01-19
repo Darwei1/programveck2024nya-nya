@@ -172,7 +172,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.399998, y: 21.599998}
+    oldSize: {x: 7.6799994, y: 4.3199997}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -193,5 +193,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c822602cc8b79940b54ccadf2c1e13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Object1: {fileID: 0}
+  Object2: {fileID: 0}
+  Object3: {fileID: 0}
+  Object4: {fileID: 0}
+  object5: {fileID: 0}
+  object6: {fileID: 0}
+  pass1: {fileID: 0}
+  pass2: {fileID: 0}
+  pass3: {fileID: 0}
+  pass4: {fileID: 0}
+  pass5: {fileID: 0}
+  pass6: {fileID: 0}
   choice: 0
   passports: []
