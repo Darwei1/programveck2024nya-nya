@@ -12,12 +12,9 @@ public class DialogueManager : MonoBehaviour // Skapad av vincent
     public string[] lines; // Array of strings representing individual lines of dialogue
     public float textSpeed; // Speed at which text is displayed
 
-    public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
+    private int index; // Index to keep track of the current line of dialogue
 
-    private int index;
-
+    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty; // Initialize the text component with an empty string
