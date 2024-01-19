@@ -11,7 +11,11 @@ public class PassportMatching : MonoBehaviour
 
     List<GameObject> guests = new List<GameObject>();
     
-    List<GameObject> Pass = new List<GameObject>(); 
+    List<GameObject> Pass = new List<GameObject>();
+
+
+    GameObject currentGuest;
+    GameObject currentPass;
 
 
     // Start is called before the first frame update
@@ -26,6 +30,9 @@ public class PassportMatching : MonoBehaviour
 
         GameObject objectFromListA = guests[0];
         GameObject objectFromListB = Pass[0];
+
+        currentGuest = gameObject;
+        currentPass = GameObject.FindGameObjectWithTag("A");
 
         if (CompareObjectsFromDifferentLists(objectFromListA, objectFromListB))
         {
