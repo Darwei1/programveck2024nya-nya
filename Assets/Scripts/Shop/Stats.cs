@@ -10,23 +10,27 @@ public class Stats : MonoBehaviour
     public Image[] foodRent;
     public Image[] heatRent;
     #endregion
-    public float rentPoints; 
-    float maxRentPoints = 90f;
-    public float foodPoints; 
-    float maxFoodPoints = 90f;
-    public float heatPoints; 
-    float maxHeatPoints = 90f;
+    public int rentPoints; 
+    int maxRentPoints = 90;
+    public int foodPoints; 
+    int maxFoodPoints = 90;
+    public int heatPoints; 
+    int maxHeatPoints = 90;
 
     public Pointsystem money;
 
     void Start()
     {
-        // set points to max points
+
+        LoadPlayerMoney();
+
+        // set points to max points 
+        /*
         rentPoints = maxRentPoints;
         foodPoints = maxFoodPoints;
         heatPoints = maxHeatPoints;
-
-        money = GetComponent<Pointsystem>();
+        */
+        money = GetComponent<Pointsystem>(); // for money from this script
         
         StatsRandomReducer(); // Everytime this script activates it randomly decreases all of the stats
     }
@@ -38,6 +42,13 @@ public class Stats : MonoBehaviour
         if (heatPoints > maxHeatPoints) heatPoints = maxHeatPoints;
 
         StatBarFiller();
+    }
+
+    private void LoadPlayerMoney() //load the player money amount
+    {
+        rentPoints = PlayerPrefs.GetInt("Rent", 0);
+        foodPoints = PlayerPrefs.GetInt("Food", 0);
+        heatPoints = PlayerPrefs.GetInt("Heat", 0);
     }
 
     // Method to fill the UI bars based on the current stat points
@@ -65,13 +76,14 @@ public class Stats : MonoBehaviour
         return ((pointNumber * 10) >= _health);
     }
 
-    public void Damage(float damagePoints) // mostly for debug 
+    #region Debug stuff >_<
+    public void Damage(int damagePoints) // mostly for debug 
     {
         rentPoints -= damagePoints;
         foodPoints -= damagePoints;
         heatPoints -= damagePoints;  
     }
-    public void Heal(float statPoints) // ^^
+    public void Heal(int statPoints) // ^^
     {
         rentPoints += statPoints;
         foodPoints += statPoints;
@@ -80,7 +92,7 @@ public class Stats : MonoBehaviour
         print(foodPoints);
         print(heatPoints);
     }
-    
+    #endregion
     // It basically takes a random number 1-3 and multiplies it with 10 so its easier for the statBars to decrease bla bla
     public void StatsRandomReducer(){
         int randomRentDecrease = Random.Range(1, 3);
@@ -94,34 +106,47 @@ public class Stats : MonoBehaviour
         print(randomRentDecrease + " " + randomFoodDecrease + " " + randomHeatDecrease);
     }
 
+    public void NextDay(){
+        PlayerPrefs.SetInt("Rent", rentPoints);
+        PlayerPrefs.SetInt("Food", foodPoints);
+        PlayerPrefs.SetInt("Heat", heatPoints);
+
+        PlayerPrefs.Save();
+        print("Saved that shi");
+    }
+
     #region all the functions for these bars
-    public void AddRentFunction(float statPoints){
-        if (money.playerMoney >= 5 && rentPoints <= 90)
-        {
+    public void AddRentFunction(int statPoints){
+        if (money.playerMoney >= 5 && rentPoints < 90){
             rentPoints += statPoints;
             money.playerMoney -= 5;
         }
-        
     }
-    public void RemoveRentFunction(float statPoints){
+    public void RemoveRentFunction(int statPoints){
         if (rentPoints > 0){
             rentPoints -= statPoints;
         }
     }
 
-    public void AddFoodFunction(float statPoints){
-        foodPoints += statPoints;
+    public void AddFoodFunction(int statPoints){
+        if (money.playerMoney >= 5 && foodPoints < 90){
+            foodPoints += statPoints;
+            money.playerMoney -= 5;
+        }
     }
-    public void RemoveFoodFunction(float statPoints){
+    public void RemoveFoodFunction(int statPoints){
         if (foodPoints > 0){
             foodPoints -= statPoints;
         }
     }
 
-    public void AddHeatFunction(float statPoints){
-        heatPoints += statPoints;
+    public void AddHeatFunction(int statPoints){
+        if (money.playerMoney >= 5 && foodPoints < 90){
+           heatPoints += statPoints; 
+           money.playerMoney -= 5;
+        }
     }
-    public void RemoveHeatFunction(float statPoints){
+    public void RemoveHeatFunction(int statPoints){
         if (heatPoints > 0){
             heatPoints -= statPoints;
         }
