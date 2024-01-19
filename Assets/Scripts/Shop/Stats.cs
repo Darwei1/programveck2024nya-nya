@@ -20,17 +20,23 @@ public class Stats : MonoBehaviour // Diyor grrr
     public bool alive;
     public Pointsystem money;
 
+    private static bool isInitialized = false;
     void Start()
     {
 
         LoadPlayerMoney();
 
         // set points to max points (nvm cant use no more bcz i save previous stats, or maybe i can use this as long it only executes once per playthorugh)
-        /*
-        rentPoints = maxRentPoints;
-        foodPoints = maxFoodPoints;
-        heatPoints = maxHeatPoints;
-        */
+        if (!isInitialized)
+        {
+            // Set the points only once when the script/component is initialized.
+            rentPoints = maxRentPoints;
+            foodPoints = maxFoodPoints;
+            heatPoints = maxHeatPoints;
+
+            // Mark initialization as complete
+            isInitialized = true;
+        }
         money = GetComponent<Pointsystem>(); // for money from this script
         
         StatsRandomReducer(); // Everytime this script activates it randomly decreases all of the stats
@@ -118,7 +124,7 @@ public class Stats : MonoBehaviour // Diyor grrr
     // Basically i save all the values and change scene
     public void NextDay(){
 
-        money.MerPengar(20);
+        money.MerPengar(15);
 
         PlayerPrefs.SetInt("Rent", rentPoints);
         PlayerPrefs.SetInt("Food", foodPoints);
