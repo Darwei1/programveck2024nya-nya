@@ -14,7 +14,7 @@ public class Pointsystem : PassportMatching //gjort av Jack (Jack döp aldrig fu
     {
         LoadPlayerMoney();
 
-        MerPengar(5);
+        MerPengar(10);
 
         MindrePengar(2);
 

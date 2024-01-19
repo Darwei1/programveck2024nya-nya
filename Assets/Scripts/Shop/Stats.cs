@@ -110,7 +110,8 @@ public class Stats : MonoBehaviour
         PlayerPrefs.SetInt("Rent", rentPoints);
         PlayerPrefs.SetInt("Food", foodPoints);
         PlayerPrefs.SetInt("Heat", heatPoints);
-
+        PlayerPrefs.SetInt("PlayerMoney", money.playerMoney);
+        
         PlayerPrefs.Save();
         print("Saved that shi");
     }
