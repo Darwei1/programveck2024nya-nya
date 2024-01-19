@@ -125,7 +125,7 @@ public class Stats : MonoBehaviour // Diyor grrr
         PlayerPrefs.Save();
         print("Saved!");
         
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Hugo");
     }
 
     #region all the functions for these bars
