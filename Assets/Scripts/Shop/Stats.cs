@@ -21,6 +21,7 @@ public class Stats : MonoBehaviour
 
     void Start()
     {
+        StatsRandomReducer(); // Everytime this script activates it randomly decreases all of the stats
 
         LoadPlayerMoney();
 
@@ -31,8 +32,6 @@ public class Stats : MonoBehaviour
         heatPoints = maxHeatPoints;
         */
         money = GetComponent<Pointsystem>(); // for money from this script
-        
-        StatsRandomReducer(); // Everytime this script activates it randomly decreases all of the stats
     }
     void Update()
     {
@@ -43,11 +42,15 @@ public class Stats : MonoBehaviour
 
         StatBarFiller();
 
-        if (rentPoints > 0 || foodPoints > 0 || heatPoints > 0)
+        if (rentPoints >= 0 || foodPoints >= 0 || heatPoints >= 0)
         {
             alive = true;
         }else {
             alive = false;
+        }
+        if (alive == false)
+        {
+            print("gg u lost");
         }
     }
 
@@ -103,9 +106,9 @@ public class Stats : MonoBehaviour
     
     // It basically takes a random number 1-3 and multiplies it with 10 so its easier for the statBars to decrease bla bla
     public void StatsRandomReducer(){
-        int randomRentDecrease = Random.Range(1, 2);
-        int randomFoodDecrease = Random.Range(1, 2);
-        int randomHeatDecrease = Random.Range(1, 2);
+        int randomRentDecrease = Random.Range(1, 3);
+        int randomFoodDecrease = Random.Range(1, 3);
+        int randomHeatDecrease = Random.Range(1, 3);
 
         rentPoints -= randomRentDecrease * 10;
         foodPoints -= randomFoodDecrease * 10;
@@ -123,6 +126,7 @@ public class Stats : MonoBehaviour
         
         PlayerPrefs.Save();
         print("Saved!");
+        money.MerPengar(20);
     }
 
     #region all the functions for these bars
@@ -151,7 +155,7 @@ public class Stats : MonoBehaviour
     }
 
     public void AddHeatFunction(int statPoints){
-        if (money.playerMoney >= 5 && foodPoints < 90){
+        if (money.playerMoney >= 5 && heatPoints < 90){
            heatPoints += statPoints; 
            money.playerMoney -= 5;
         }
