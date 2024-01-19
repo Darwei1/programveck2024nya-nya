@@ -16,7 +16,7 @@ public class Stats : MonoBehaviour
     int maxFoodPoints = 90;
     public int heatPoints; 
     int maxHeatPoints = 90;
-
+    public bool alive;
     public Pointsystem money;
 
     void Start()
@@ -42,6 +42,13 @@ public class Stats : MonoBehaviour
         if (heatPoints > maxHeatPoints) heatPoints = maxHeatPoints;
 
         StatBarFiller();
+
+        if (rentPoints > 0 || foodPoints > 0 || heatPoints > 0)
+        {
+            alive = true;
+        }else {
+            alive = false;
+        }
     }
 
     private void LoadPlayerMoney() //load the player money amount
@@ -93,11 +100,12 @@ public class Stats : MonoBehaviour
         print(heatPoints);
     }
     #endregion
+    
     // It basically takes a random number 1-3 and multiplies it with 10 so its easier for the statBars to decrease bla bla
     public void StatsRandomReducer(){
-        int randomRentDecrease = Random.Range(1, 3);
-        int randomFoodDecrease = Random.Range(1, 3);
-        int randomHeatDecrease = Random.Range(1, 3);
+        int randomRentDecrease = Random.Range(1, 2);
+        int randomFoodDecrease = Random.Range(1, 2);
+        int randomHeatDecrease = Random.Range(1, 2);
 
         rentPoints -= randomRentDecrease * 10;
         foodPoints -= randomFoodDecrease * 10;
@@ -106,6 +114,7 @@ public class Stats : MonoBehaviour
         print(randomRentDecrease + " " + randomFoodDecrease + " " + randomHeatDecrease);
     }
 
+    // Basically i save all the values and change scene
     public void NextDay(){
         PlayerPrefs.SetInt("Rent", rentPoints);
         PlayerPrefs.SetInt("Food", foodPoints);
@@ -113,7 +122,7 @@ public class Stats : MonoBehaviour
         PlayerPrefs.SetInt("PlayerMoney", money.playerMoney);
         
         PlayerPrefs.Save();
-        print("Saved that shi");
+        print("Saved!");
     }
 
     #region all the functions for these bars
