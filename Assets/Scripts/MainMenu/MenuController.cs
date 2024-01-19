@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public void StartGame(){ //Loading Mainscene when calling for this function
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Hugo");
         print("SceneLoad");
     }
     public void Settings(){ 
