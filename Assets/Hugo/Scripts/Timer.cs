@@ -25,11 +25,12 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 canvas.GetComponent<CanvasGroup>().alpha -= 0.5f * Time.deltaTime;
-
+                Invoke("deactivate", 2);
 
             }
             else
             {
+                canvas.SetActive(true);
                 canvas.GetComponent<CanvasGroup>().alpha += 0.5f * Time.deltaTime;
                 
                 Invoke("ChangeScene", 3);
@@ -42,5 +43,10 @@ public class Timer : MonoBehaviour
     void ChangeScene()
     {
         SceneManager.LoadScene("ShopMenu");
+    }
+
+    void deactivate()
+    {
+        canvas.SetActive(false);
     }
 }

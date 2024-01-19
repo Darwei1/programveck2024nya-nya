@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
     {
         latestCharacter = GameObject.FindGameObjectWithTag("guest");
         Invoke("Animation2", 0);
-       
+      
         offScreenDestroy(latestCharacter);
         Invoke("Spawn", 3);
     }
