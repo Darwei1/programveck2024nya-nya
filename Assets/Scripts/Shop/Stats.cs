@@ -26,7 +26,7 @@ public class Stats : MonoBehaviour // Diyor grrr
 
         LoadPlayerMoney();
 
-        // set points to max points (nvm cant use no more bcz i save previous stats, or maybe i can use this as long it only executes once per playthorugh)
+        // set points to max points (nvm cant use no more bcz i save previous stats, or maybe i can use this as long it only executes once per playthorugh) i did it
         if (!isInitialized)
         {
             // Set the points only once when the script/component is initialized.
