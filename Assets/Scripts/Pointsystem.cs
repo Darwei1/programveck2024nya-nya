@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Pointsystem : PassportMatching //gjort av Jack
 {
     public TextMesh moneyText;
-    private int playerMoney;
+    public int playerMoney;
     public TextMesh canvasText;
 
     void Start()
