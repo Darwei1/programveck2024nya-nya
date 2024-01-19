@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Stats : MonoBehaviour
+public class Stats : MonoBehaviour // Diyor grrr
 {
     #region rentArrays // Arrays for imageBars
     public Image[] rentRent;
@@ -24,7 +25,7 @@ public class Stats : MonoBehaviour
 
         LoadPlayerMoney();
 
-        // set points to max points 
+        // set points to max points (nvm cant use no more bcz i save previous stats, or maybe i can use this as long it only executes once per playthorugh)
         /*
         rentPoints = maxRentPoints;
         foodPoints = maxFoodPoints;
@@ -123,6 +124,8 @@ public class Stats : MonoBehaviour
         
         PlayerPrefs.Save();
         print("Saved!");
+        
+        SceneManager.LoadScene("MainScene");
     }
 
     #region all the functions for these bars

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,22 +8,22 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
     public GameObject Object2;
     public GameObject Object3;
     public GameObject Object4;
-    public GameObject Object5;
-    public GameObject Object6;
-
+    public GameObject object5;
+    public GameObject object6;
 
     public GameObject pass1;
     public GameObject pass2;
     public GameObject pass3;
     public GameObject pass4;
-
-    public GameObject playerRef;
+    public GameObject pass5;
+    public GameObject pass6;
     
+
 
     public bool choice;
     public GameObject[] passports;
 
-    List<GameObject> guests = new List<GameObject>();
+    List<GameObject> G�ster = new List<GameObject>();
     
     List<GameObject> Pass = new List<GameObject>();
 
@@ -36,6 +35,7 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
     // Start is called before the first frame update
     void Start()
     {
+        currentGuest = GameObject.FindGameObjectWithTag("Guest");
 
         guests.Add(Object1);
         guests.Add(Object2);
@@ -60,12 +60,6 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
             Debug.Log(objectFromListA.name + " and " + objectFromListB.name + " have different numbers.");
         }
     }
-
-    private bool CompareObjectsFromDifferentLists(GameObject objectFromListA, GameObject objectFromListB)
-    {
-        throw new NotImplementedException();
-    }
-
     void AssignNumbersToList(List<GameObject> gameObjectsList)
     {
         for (int i = 0; i < gameObjectsList.Count; i++)
@@ -75,20 +69,47 @@ public class PassportMatching : MonoBehaviour //gjort av jack och anton
         }
     }
 
-    private void Update()
+    bool CompareObjectsFromDifferentLists(GameObject objA, GameObject objB)
     {
-        for (int i = 0; i < passports.Length; i++)
-        {
-            if (passports[i].layer == playerRef.layer)
-            {
-                print("ARE MATCHING!");
-            }
-            else
-            {
-                print("ARE NOT MATCHING!");
-            }
-        }
+        int numberA = ExtractNumber(objA.name);
+        int numberB = ExtractNumber(objB.name);
+
+        return numberA == numberB;
     }
 
     
+    bool CompareObjects(GameObject obj1, GameObject obj2)
+    {
+        int number1 = ExtractNumber(obj1.name);
+        int number2 = ExtractNumber(obj2.name);
+
+        return number1 == number2;
+    }
+
+    int ExtractNumber(string input)
+    {
+        int number = 0;
+        string numberString = "";
+
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (char.IsDigit(input[i]))
+            {
+                numberString += input[i];
+            }
+            else if (!string.IsNullOrEmpty(numberString))
+            {
+                break;
+            }
+        }
+
+        int.TryParse(numberString, out number);
+
+        return number;
+    }
+
 }
+
+   
+
+ 

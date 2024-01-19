@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pointsystem : PassportMatching //gjort av Jack (Jack döp aldrig funktioner igen på svenska - Diyor)
+public class Pointsystem : PassportMatching //gjort av Jack
 {
-    public TextMeshProUGUI moneyText;
-    public int playerMoney;
+    public TextMesh moneyText;
+    private int playerMoney;
     public TextMesh canvasText;
 
     void Start()
     {
         LoadPlayerMoney();
 
-        MerPengar(20);
+        MerPengar(100);
 
-        MindrePengar(2);
+        MindrePengar(30);
 
     }
 
     public void MerPengar(int amount) //if choice right then get money and display money value
     {
-        playerMoney += amount;
+        if (choice == true)
+        {
+            playerMoney += amount;
 
             print("Added " + amount + " to money. Current money: " + playerMoney);
 
@@ -30,25 +31,20 @@ public class Pointsystem : PassportMatching //gjort av Jack (Jack döp aldrig fu
 
             UpdateUI();
 
-        if (choice == true)
-        {
-            
-
         }
 
     }
 
     public void MindrePengar(int amount) // if wrong choice then no money
     {
-        playerMoney -= amount;
+        if (choice == false)
+        {
+            playerMoney -= amount;
             print("Subtracted " + amount + " from money. Current money: " + playerMoney);
 
             SavePlayerMoney();
 
             UpdateUI();
-        if (choice == false)
-        {
-            
 
         }
 
