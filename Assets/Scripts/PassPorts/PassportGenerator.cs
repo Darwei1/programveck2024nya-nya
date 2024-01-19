@@ -97,7 +97,7 @@ public class PassportGenerator : MonoBehaviour // Diyor
     {
         if (currentPassport == null)
         {
-            currentPassport = GameObject.FindGameObjectWithTag("A");
+            currentPassport = GameObject.FindGameObjectWithTag("Good");
         }
         else if(nameText == null)
         {
