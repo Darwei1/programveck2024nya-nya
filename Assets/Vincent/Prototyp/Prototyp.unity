@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 105692188}
   - component: {fileID: 105692191}
   - component: {fileID: 105692190}
+  - component: {fileID: 105692192}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -199,6 +200,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105692187}
   m_CullTransparentMesh: 1
+--- !u!114 &105692192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105692187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671b193d116d19e42907b23e007464cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1260905748}
+  lines:
+  - 'alien: helo'
+  - 'you: ale'
+  textSpeed: 0.15
 --- !u!1 &129393965
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,15 +467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348fa20bbaea0c94a8538770bd44464d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1260905748}
-  lines:
-  - 'alien: helo, give me a room!'
-  - 'you: okay sir!'
-  - 'alien: i love big weapons!'
-  - you
-  textSpeed: 0.095
-  CharacterPrefab: {fileID: 369031141}
+  CharacterPrefab: {fileID: 830226898}
   latestCharacter: {fileID: 0}
+  dialogueManager: {fileID: 105692192}
 --- !u!1001 &350266170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,11 +535,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512d91e586ec7a84baa5d530e1de39d4, type: 3}
---- !u!1 &369031141 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2067513262010752473, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
-  m_PrefabInstance: {fileID: 830226896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &505828216
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +908,11 @@ PrefabInstance:
 --- !u!95 &830226897 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2565165597534571488, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
+  m_PrefabInstance: {fileID: 830226896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &830226898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2067513262010752473, guid: 9afb201c40d22f44ca9424deba725f1a, type: 3}
   m_PrefabInstance: {fileID: 830226896}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &860274839
@@ -1772,15 +1784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348fa20bbaea0c94a8538770bd44464d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1260905748}
-  lines:
-  - 'alien: helo, give me a room!'
-  - 'you: okay sir!'
-  - 'alien: i love big weapons!'
-  - you
-  textSpeed: 0.095
-  CharacterPrefab: {fileID: 369031141}
+  CharacterPrefab: {fileID: 830226898}
   latestCharacter: {fileID: 0}
+  dialogueManager: {fileID: 105692192}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

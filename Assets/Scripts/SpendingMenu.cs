@@ -9,7 +9,7 @@ public class SpendingMenu : MonoBehaviour
     [SerializeField] private CanvasGroup myUIGroup;
     void Start()
     {
-        //menu.SetActive(false);
+        menu.SetActive(false);
     }
 
     public void CloseMenu()

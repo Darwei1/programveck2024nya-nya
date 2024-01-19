@@ -12,24 +12,9 @@ public class DialogueManager : MonoBehaviour // Skapad av vincent
     public string[] lines; // Array of strings representing individual lines of dialogue
     public float textSpeed; // Speed at which text is displayed
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> cceec15c584b12f3f534395b4120d8ec9a4b30a8
-    public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
-
-    private int index;
-
-<<<<<<< HEAD
-=======
     private int index; // Index to keep track of the current line of dialogue
 
     // Start is called before the first frame update
->>>>>>> d5135f9eef5a9f4304f46a30aa556eec52208fbe
-=======
->>>>>>> cceec15c584b12f3f534395b4120d8ec9a4b30a8
     void Start()
     {
         textComponent.text = string.Empty; // Initialize the text component with an empty string
@@ -48,19 +33,9 @@ public class DialogueManager : MonoBehaviour // Skapad av vincent
             }
             else
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
                 StopAllCoroutines(); // Stop any ongoing text animations
                 textComponent.text = lines[index]; // Display the entire line instantly
                 Destroy(this.gameObject); // Destroy the DialogueManager (not typical, usually deactivated)
->>>>>>> d5135f9eef5a9f4304f46a30aa556eec52208fbe
-=======
-                StopAllCoroutines(); // Stop any ongoing text animations
-                textComponent.text = lines[index]; // Display the entire line instantly
-                Destroy(this.gameObject); // Destroy the DialogueManager (not typical, usually deactivated)
->>>>>>> cceec15c584b12f3f534395b4120d8ec9a4b30a8
             }
         }
     }
