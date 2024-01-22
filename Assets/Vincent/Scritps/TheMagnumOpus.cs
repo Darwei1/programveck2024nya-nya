@@ -1,20 +1,16 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TheMagnumOpus : MonoBehaviour  skapad av vincent
+public class TheMagnumOpus : MonoBehaviour 
 {
 
-    public Transform Magnifier;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"));
+        if (collision.CompareTag("A"))
         {
-            Magnifier.localScale = new Vector3(2, 2, 1);
+            Debug.Log("the magnus opus");
         }
     }
-        
 
 }
-*/
