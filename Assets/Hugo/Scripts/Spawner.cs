@@ -8,18 +8,21 @@ public class Spawner : MonoBehaviour
     public GameObject latestCharacter;
     
     PassportGenerator passportGenerator;
+
+    public KeySpawn keySpawnScript;
     
     // Start is called before the first frame update
     void Start()
     {
         passportGenerator = GetComponent<PassportGenerator>();
          passportGenerator.Generate();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
 
     void Spak()
@@ -32,7 +35,7 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
        latestCharacter = Instantiate(CharacterPrefab[Random.Range(0,CharacterPrefab.Length)], new Vector3(0, 1.71f, 0), Quaternion.identity);
-      
+       
     }
 
     public void spawnTimer()
