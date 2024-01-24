@@ -6,18 +6,23 @@ public class KeySpawn : MonoBehaviour
 {
     public GameObject objectToSpawn;
 
-    public GameObject pref;
-    public bool spawn;// its true
+    // public Spawner spawnerScript;
+
+    public GameObject key;
+
+    public bool spawn = true;// its true
     // Start is called before the first frame update
+
     private void Start()
     {
-        
+        key = GameObject.FindGameObjectWithTag("D");
     }
-     void Update()
+    private void Update()
     {
-        pref = GameObject.FindGameObjectWithTag("guest");
-        
-        
+        if ( key == null)
+        {
+            spawn = true;
+        }
     }
     public void OnButtonPress()
     {
