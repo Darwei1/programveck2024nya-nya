@@ -26,10 +26,7 @@ public class KeySpawn : MonoBehaviour
     }
     public void OnButtonPress()
     {
-        if (pref != null)
-        {
-            spawn = true;
-        }
+       
         if (spawn == true)
         {
             Instantiate(objectToSpawn, new Vector3(3, -3, 0), Quaternion.Euler(0, 0, -90));
