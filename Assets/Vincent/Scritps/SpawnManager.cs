@@ -6,8 +6,8 @@ using UnityEngine.Animations;
 public class SpawnManager : GameManager
 {
 
-
-
+    public static SpawnManager spawnInstance;
+    
 
 
 
