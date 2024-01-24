@@ -142,7 +142,7 @@ public class PassportGenerator : MonoBehaviour // Diyor
 		if (value >= baseFakeValue)
 		{
 			isLetterValid = false;
-				planet = PickRandomFromList(fakePlanets) + " is FAKE";
+            planet = PickRandomFromList(fakePlanets);
 		}
 
         // Sets the values for every thing in the pass
