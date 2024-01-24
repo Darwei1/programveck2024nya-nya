@@ -55,9 +55,9 @@ public class PassportGenerator : MonoBehaviour // Diyor
     "Cerion"
     };
     List<string> socialStatuses = new List<string>{
-        "Actively Criminal", 
+        "Criminal", 
         "Legal", 
-        "Former gang criminal",
+        "Ex-criminal",
     };
     List<string> incomes = new List<string>{
         "Rich",
