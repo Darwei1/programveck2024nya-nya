@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SpriteManager : MonoBehaviour
+public class SpriteManager : SpawnManager
 {
     public SpriteRenderer sRend;
     public Sprite[] sprites;
@@ -16,6 +16,7 @@ public class SpriteManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ChangeSprite();
+            CreateDia();
         }
 
         
@@ -24,9 +25,6 @@ public class SpriteManager : MonoBehaviour
     void Start()
     {
         sRend = gameObject.GetComponent<SpriteRenderer>();
-        textBox = dialogue_Prefab.GetComponentInChildren<TextMeshProUGUI>();
-
-        Instantiate(dialogue_Prefab, transform.position, Quaternion.identity);
     }
 
     void ChangeSprite()
