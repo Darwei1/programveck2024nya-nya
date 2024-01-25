@@ -14,15 +14,21 @@ public class AnimationThing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && isActive == false)
+        
+
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            this.gameObject.GetComponent<Animator>().Play("PlanetList");
-            isActive = true;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isActive == true)
-        {
-            this.gameObject.GetComponent<Animator>().Play("PlanetList2");
-            isActive = false;
+            if (isActive)
+            {
+                this.gameObject.GetComponent<Animator>().Play("PlanetList2");
+                isActive = false;
+            }
+            else
+            {
+                this.gameObject.GetComponent<Animator>().Play("PlanetList");
+                isActive = true;
+            }
+            
         }
     }
 }
