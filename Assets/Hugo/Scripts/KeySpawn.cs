@@ -6,7 +6,7 @@ public class KeySpawn : MonoBehaviour
 {
     public GameObject objectToSpawn;
 
-    // public Spawner spawnerScript;
+    
 
     public GameObject key;
 
@@ -17,8 +17,10 @@ public class KeySpawn : MonoBehaviour
     {
         key = GameObject.FindGameObjectWithTag("D");
     }
-    private void Update()
+     void Update()
     {
+        key = GameObject.FindGameObjectWithTag("D");
+
         if ( key == null)
         {
             spawn = true;
