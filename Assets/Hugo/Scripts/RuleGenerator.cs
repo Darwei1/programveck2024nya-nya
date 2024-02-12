@@ -20,16 +20,16 @@ public class RuleGenerator : MonoBehaviour
     "NO PLUTONIANS",
     "NO CERESIANS"};
     List<string> surNamesRules = new List<string> {
-    "NO Vortis",
-    "NO Xandros",
-    "NO Kyralis",
-    "NO Zenthos",
-    "NO Vorlonis",
-    "NO Thalrak",
-    "NO Grythonix",
-    "NO Sylaris",
-    "NO Quixar",
-    "NO Xyloxis"};
+    //"NO NAMED Vortis",
+   // "NO NAMED Xandros",
+   // "NO NAMED Kyralis",
+    //"NO NAMED Zenthos",
+    //"NO NAMED Vorlonis",
+   // "NO NAMED Thalrak",
+    "NO NAME Grythonix",
+    //"NO NAMED Sylaris",
+   // "NO NAMED Quixar",
+    "NO NAMED Xyloxis"};
    
     public int value;
 

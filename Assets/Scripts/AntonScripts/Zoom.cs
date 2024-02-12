@@ -8,6 +8,8 @@ public class Zoom : MonoBehaviour
     private float MGWidth = Screen.width / 5f, MGHeight = Screen.width / 5f; // Magnify glass width and height
     private Vector3 mousePos;
 
+   
+
     void Start()
     {
         createMagnifyGlass();
@@ -77,4 +79,5 @@ public class Zoom : MonoBehaviour
         }
         return worldPos;
     }
+
 }
